@@ -1,0 +1,283 @@
+*{
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: Montserrat;
+	src: url('fonts/Montserrat-Light.ttf');
+	font-weight: 400;
+}
+@font-face {
+	font-family: Montserrat;
+	src: url('fonts/Montserrat-Regular.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Montserrat;
+	src: url('fonts/Montserrat-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Montserrat;
+	src: url('fonts/Montserrat-Bold.ttf');
+	font-weight: 600;
+}
+
+/* preparatory */
+:root{
+	--main-dark-color: #254E70;
+	--default-button-color: #0AD3FF;
+	--default-border-color: #dfdfdf;
+}
+form, button, input{
+	font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+button{
+	padding-block: 0;
+	padding-inline: 0;
+}
+.shadow{
+	-webkit-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+	-moz-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+	box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+}
+.hidden{
+	display: none !important;
+}
+/* main */
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #fafafa;
+	font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: var(--main-dark-color);
+}
+header{
+	width: calc(100% - 80px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 40px;
+}
+h1{
+	text-align: center;
+	margin: 0;
+	font-size: 48px;
+}
+main{
+	width: 100%;
+}
+.todo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	background-color: #f2f2f2;
+	padding: 40px;
+	width: 40%;
+	margin: 0 auto;
+	border-radius: 16px;
+	border: 4px solid var(--default-border-color);
+	-webkit-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+	-moz-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+	box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+}
+.todo-input-block{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	border: 2px solid var(--default-border-color);
+	border-radius: 8px;
+	-webkit-box-shadow: 1px 10px 10px 4px rgba(102,102,102,0.11);
+	-moz-box-shadow: 1px 10px 10px 4px rgba(102,102,102,0.11);
+	box-shadow: 1px 10px 10px 4px rgba(102,102,102,0.11);
+	overflow: hidden;
+}
+.todo-input-block__input{
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-inline: 8px;
+	padding-block: 0;
+	width: calc(100% - 40px);
+	height: 40px;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+	color: var(--main-dark-color);
+}
+.todo-input-block__input:focus{
+	outline: none;
+	border: none;
+}
+.todo-input-block__input:invalid + span{
+	background-color: black;
+}
+.todo_input-block__submit-button{
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	background-color: var(--default-button-color);
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+.todo_input-block__submit-button:hover{
+	background-color: #07acd1;
+}
+.todo-list{
+	font-size: 24px;
+	width: 100%;
+}
+.todo-list-item{
+	background-color: #F4F1DE;
+	padding: 8px;
+	border-radius: 8px;
+	margin: 8px 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	-webkit-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+	-moz-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+	box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.31);
+}
+.todo-list-item{
+	display: flex;
+	justify-content: space-between;
+	transition: background-color, color, box-shadow 0.2s ease-in;
+}
+.todo-list-item__checked{
+	background-color: #f2f2f2;
+	text-decoration: line-through;
+	color: #5f5f5f;
+	-webkit-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+	-moz-box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+	box-shadow: 1px 3px 10px 4px rgba(102,102,102,0.11);
+}
+.todo-list-item__toggle-checkbox-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	cursor: pointer;
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.todo-list-item__toggle-checkbox{
+	display: none;
+}
+.todo-list-item__toggle-checkbox-custom{
+	display: block;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	background-color: #fafafa;
+	border: 1px solid rgba(55, 113, 142, 0.5);
+	border-radius: 50%;
+	transition: background-color 0.1s ease-in;
+}
+.todo-list-item__toggle-checkbox:checked + .todo-list-item__toggle-checkbox-custom{
+	background-color: #37718E;
+	opacity: 1;
+}
+.todo-list-item__toggle-checkbox-custom::before{
+	content: "\f00c";
+	font-family: "FontAwesome";
+	color: #37718E;
+	font-size: 16px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity, color 0.1s ease-in;
+}
+.todo-list-item__toggle-checkbox:checked + .todo-list-item__toggle-checkbox-custom::before{
+	opacity: 1;
+	color: white;
+}
+.todo-list-item__content{
+	word-wrap: break-word;
+	word-break: break-all;
+	width: calc(100% - 80px);
+}
+.todo-list-item__delete-button{
+	padding: 4px;
+	margin-right: 4px;
+	background-color: transparent;
+	color: var(--main-dark-color);
+	opacity: 0.8;
+	border: none;
+}
+.todo-list-item__delete-button:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+.todo-info{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 100%;
+	font-size: 14px;
+}
+.todo-info button{
+	position: relative;
+	background-color: transparent;
+	border: none;
+	color: var(--main-dark-color);
+	font-size: 14px;
+}
+.todo-info button::after{
+	content: '';
+	position: absolute;
+	right: 50%;
+	bottom: -4px;
+	width: 0;
+	border-bottom: 2px solid var(--main-dark-color);
+	transform: translate(50%);
+	transition: width 0.1s ease-in;
+}
+.todo-info button:hover{
+	cursor: pointer;
+}
+.todo-info button:hover::after{
+	width: 100%;
+}
+.todo-view{
+	display: flex;
+	gap: 12px;
+}
+
+/*адаптивность*/
+@media (max-width:1280px) {
+	.todo{
+		width: 60%;
+	}
+}
+@media (max-width:780px) {
+	.todo{
+		width: 80%;
+	}
+}
+@media (max-width:580px) {
+	.todo{
+		width: 100%;
+		border-radius: 0;
+	}
+	.todo-info{
+		flex-direction: column;
+		gap: 8px;
+	}
+}
