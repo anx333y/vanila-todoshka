@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToDoшечка</title>
+	<link rel="shortcut icon" href="/icons/todo-icon_dark.svg" type="image/svg">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/c31fc2e9da.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<h1>ToDo.app</h1>
+		<span>ToDo by anx3y</span>
+		<span>for practice</span>
+	</header>
+	<main>
+		<section class="todo">
+			<form class="todo-input-block">
+				<input class="todo-input-block__input" type="text" autofocus required>
+				<button class="todo_input-block__submit-button" type="submit"><i class="fa fa-check"></i></button>
+			</form>
+			<ul class="todo-list">
+				<li class="todo-list-item">
+					<label class="todo-list-item__toggle-checkbox-wrapper">
+						<input type="checkbox" class="todo-list-item__toggle-checkbox">
+						<span class="todo-list-item__toggle-checkbox-custom"></span>
+					</label>
+					<span class="todo-list-item__content">Clean room</span>
+					<button class="todo-list-item__delete-button">
+						<i class="fa fa-close"></i>
+					</button>
+				</li>
+			</ul>
+			<div class="todo-info">
+				<span class="todo-info__count"></span>
+				<ul class="todo-view">
+					<li class="todo-view__all"><button class="todo-view__all-button">All</button></li>
+					<li class="todo-view__active"><button class="todo-view__active-button">Active</button></li>
+					<li class="todo-view__completed"><button class="todo-view__completed-button">Completed</button></li>
+				</ul>
+				<button class="todo-info__clear-completed-button">Clear completed</button>
+			</div>
+		</section>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
